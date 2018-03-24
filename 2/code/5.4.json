@@ -1,0 +1,28 @@
+{
+    "coord": { "lat": 28.54, "lon": -81.38 },
+    "clouds": { "all": 1 },
+    "base": "cmc stations",
+    "main": {
+        "temp_min": 46.4,
+        "temp": 47.89,
+        "humidity": 61,
+        "pressure": 1024,
+        "temp_max": 48.2
+    },
+    "cod": 200,
+    "sys": {
+        "country": "US",
+        "sunset": 1452552475,
+        "message": 0.0038,
+        "id": 703,
+        "type": 1,
+        "sunrise": 1452514764
+    },
+    "id": 4167147,
+    "dt": 1452523980,
+    "wind": { "speed": 4.54 },
+    "weather": [
+        { "description": "sky is clear", "main": "Clear", "id": 800, "icon": "01d" }
+    ],
+    "name": "Orlando"
+}
