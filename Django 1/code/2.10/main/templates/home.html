@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    {% load staticfiles %}
+
+    <head>
+        <link href="{% static 'bootstrap.min.css' %}" media="screen" rel="stylesheet">
+        <link href="{% static 'style.css' %}" media="screen" rel="stylesheet">
+        <title>Travel Tracker</title>
+    </head>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <a class="navbar-brand" href="/"><img alt="Travel Tracker Brand" height="200" src="{%%20static%20'images/traveltracker-brand.svg'%20%}"></a>
+    </nav>
+    <main class="container">
+        {% for location in locations %}
+        <div class="tracker panel panel-default {% cycle 'tracker-left' 'tracker-right' %}">
+            <div class="panel-heading">
+                <h2 class="panel-title">{{ location.name }}</h2>
+            </div>
+            <div class="panel-body">
+                <div class="tracker-photo"><img alt="" height="300" src="{{%20location.img_url%20}}"></div>
+                <table class="tracker-table">
+                    <tr>
+                        <th><img alt="Location Icon" src="{%%20static%20'images/traveltracker-brand-location-icon.png'%20%}"> Location:</th>
+                        <td>{{ location.name }}</td>
+                    </tr>
+                    <tr>
+                        <th><img alt="Restaurant Icon" src="{%%20static%20'images/traveltracker-brand-restaurant-icon.png'%20%}"> Number of Restaurants:</th>
+                        <td>{{ location.num_restaurants }}</td>
+                    </tr>
+                    <tr>
+                        <th><img alt="Predator Icon" src="{%%20static%20'images/traveltracker-brand-predator-icon.png'%20%}"> Predators:</th>
+                        <td>{{ location.predators }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>{% endfor %}
+    </main>
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p class="text-muted">&copy; Travel Tracker 2016</p>
+        </div>
+    </footer>
+</body>
+
+</html>

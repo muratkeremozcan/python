@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TravelTracker</title>
+</head>
+
+<body>
+    <h1>TravelTracker</h1>{% for location in locations %}
+    <p>{{ location.name }}</p>
+    <p>{{ location.predators }}</p><img src="{{%20location.img_url%20}}" width="80"> {% endfor %}
+</body>
+
+</html>
