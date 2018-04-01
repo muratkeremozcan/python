@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    {% load staticfiles %}
+
+    <head>
+        <link href="{% static 'bootstrap.min.css' %}" media="screen" rel="stylesheet">
+        <link href="{% static 'style.css' %}" media="screen" rel="stylesheet">
+        <title>Travel Tracker</title>
+    </head>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <a class="navbar-brand" href="/"><img alt="Travel Tracker Brand" height="200" src="{%%20static"></a>
+    </nav>
+    <main class="container">
+        <div class="row">
+            {% for location in locations|dictsort:'name' %}
+            <div class="col-md-3">
+                <a href="/{{%20location.id%20}}/">
+                    <div class="tracker panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">{{ location.name }}</h2>
+                        </div>
+                        <div class="panel-body">
+                            <div class="tracker-photo"><img alt="" height="300" src="{{%20location.img_url%20}}"></div>
+                        </div>
+                    </div>
+                </a>
+            </div>{% endfor %}
+        </div>
+    </main>
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p class="text-muted">&copy; Travel Tracker 2016</p>
+        </div>
+    </footer>
+</body>
+
+</html>

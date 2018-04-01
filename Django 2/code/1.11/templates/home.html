@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    {% extends 'base.html' %} {% load staticfiles %} {% block content %}
+    <div class="row">
+        {% for location in locations|dictsort:'name' %}
+        <div class="col-md-3">
+            <a href="/{{%20location.id%20}}/">
+                <div class="tracker panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ location.name }}</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="tracker-photo"><img alt="" height="300" src="{{%20location.img_url%20}}"></div>
+                    </div>
+                </div>
+            </a>
+        </div>{% endfor %}
+    </div>{% endblock %}
+</body>
+
+</html>
